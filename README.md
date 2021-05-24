@@ -1,5 +1,4 @@
-# Courier_App
-Courier
+# Platform APP
 
 *project structure*
 
@@ -9,7 +8,9 @@ Courier
 |
 └────── src
 │       |
-|       |── angular /*client files*/
+|       |── client
+|       |       |
+|       │       └─ angular /*client files*/
 |       |
 |       |── config
 |       │       ├── config.json /*dev,test,production*/
