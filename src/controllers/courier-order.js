@@ -14,7 +14,7 @@ exports.addOrder = async (req, res, next) => {
       eamil: req.body.email,
       mobile: req.body.mobile,
       location: req.body.location,
-      customerId: req.body.customerId,
+      customerId: req.body.customerId ? req.body.customerId : null,
       createdBy: req.userId,
       updatedBy: req.userId,
       status: "Confirmed",
