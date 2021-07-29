@@ -141,8 +141,8 @@ exports.getOrderById = async (req, res, next) => {
   try {
     const getOrder = await CourierOrder.find({ _id: req.params.id })
       .populate("userId", "_id email first_name last_name")
-      .populate("customerId", "_id email first_name last_name")
-      .populate("updatedBy", "_id email first_name last_name");
+      .populate("updatedBy", "_id email first_name last_name")
+      .populate("createdBy", "_id email first_name last_name");
 
     return res.status(200).json({
       message: "Fetched successfully!",
@@ -165,7 +165,7 @@ exports.updateOrder = async (req, res, next) => {
       desc: req.body.desc,
       type: req.body.type,
       branch: req.body.branch,
-      customerId: req.body.customerId._id,
+      customerId: req.body.customerId ? req.body.customerId : null,
       form: req.body.from,
       to: req.body.to,
       location: req.body.location,

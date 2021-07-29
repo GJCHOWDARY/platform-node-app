@@ -22,6 +22,10 @@ const courierOrderSchema = new Schema(
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     amount: {
       type: String,
       required: true,
