@@ -3,6 +3,7 @@ const CourierOrder = require("../models/courier-order");
 exports.addOrder = async (req, res, next) => {
   try {
     var newOrder = new CourierOrder({
+      orderId: req.body.orderId ? req.body.orderId : new Date().getTime(),
       name: req.body.name,
       desc: req.body.desc,
       type: req.body.type,
@@ -159,6 +160,7 @@ exports.updateOrder = async (req, res, next) => {
   try {
     const order = {
       _id: req.body._id,
+      orderId: req.body.orderId,
       name: req.body.name,
       desc: req.body.desc,
       type: req.body.type,

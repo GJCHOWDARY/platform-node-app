@@ -30,8 +30,7 @@ const courierOrderSchema = new Schema(
       type: String,
     },
     orderId: {
-      type: Number,
-      default: new Date().getTime(),
+      type: String,
       required: true,
       unique: true,
     },
